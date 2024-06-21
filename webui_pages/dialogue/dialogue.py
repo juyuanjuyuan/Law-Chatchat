@@ -137,9 +137,9 @@ def dialogue_page(api: ApiRequest, is_lite: bool = False):
 
         dialogue_modes = ["LLM 对话",
                           "知识库问答",
-                          "文件对话",
+                          #"文件对话",
                           "搜索引擎问答",
-                          "自定义Agent问答",
+                          #"自定义Agent问答",
                           ]
         dialogue_mode = st.selectbox("请选择对话模式：",
                                      dialogue_modes,
@@ -200,10 +200,10 @@ def dialogue_page(api: ApiRequest, is_lite: bool = False):
 
         index_prompt = {
             "LLM 对话": "llm_chat",
-            "自定义Agent问答": "agent_chat",
+            #"自定义Agent问答": "agent_chat",
             "搜索引擎问答": "search_engine_chat",
             "知识库问答": "knowledge_base_chat",
-            "文件对话": "knowledge_base_chat",
+            #"文件对话": "knowledge_base_chat",
         }
         prompt_templates_kb_list = list(PROMPT_TEMPLATES[index_prompt[dialogue_mode]].keys())
         prompt_template_name = prompt_templates_kb_list[0]
